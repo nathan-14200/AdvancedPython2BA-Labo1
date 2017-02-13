@@ -9,6 +9,20 @@ def fact(n):
     Post: Returns the factorial of 'n'.
     Throws: ValueError if n < 0
     """
+    try:
+        if n < 0 or type(n) == float:
+            raise ValueError
+        i = n
+        result = 1
+        while i > 0:
+            result = result * n
+            i -= 1
+        return result
+
+    except ValueError:
+        print("An error has occure")
+    
+        
 
 def roots(a, b, c):
     """Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -17,6 +31,7 @@ def roots(a, b, c):
     Post: Returns a tuple with zero, one or two elements corresponding
           to the roots of the ax^2 + bx + c polynomial.
     """
+    
     pass
 
 def integrate(function, lower, upper):
@@ -31,6 +46,6 @@ def integrate(function, lower, upper):
     pass
 
 if __name__ == '__main__':
-    print(fact(5))
+    print(fact(2.5))
     print(roots(1, 0, 1))
     print(integrate('x ** 2 - 1', -1, 1))

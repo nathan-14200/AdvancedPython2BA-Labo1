@@ -37,23 +37,21 @@ def roots(a, b, c):
         delta = b**2-4*a*c
 
         if delta > 0:
-            result1 = (-b + delta)/(2*a)
-            result2 = (-b - delta)/(2*a)
+            result1 = (-b + delta**(1/2))/(2*a)
+            result2 = (-b - delta**(1/2))/(2*a)
             answer = (result1, result2)
             return answer
         
         elif (delta == 0):
-            result = (-b + delta)/(2*a)
+            result = (-b + delta**(1/2))/(2*a)
             answer = result,
             return answer
         
         else:
             return ()
 
-    except ValueError as x:
-        print(x)
-
-        #print("The values have to be numbers")
+    except:
+        print("An error has occured")
 
 def integrate(function, lower, upper):
     """Approximates the integral of a fonction between two bounds

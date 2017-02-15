@@ -36,6 +36,10 @@ def roots(a, b, c):
     try:
         delta = b**2-4*a*c
 
+        if a == 0 and delta >= 0 and b != 0:
+            result = -c/b
+            return (result,)
+        
         if delta > 0:
             result1 = (-b + delta**(1/2))/(2*a)
             result2 = (-b - delta**(1/2))/(2*a)

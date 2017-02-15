@@ -36,23 +36,24 @@ def roots(a, b, c):
     try:
         delta = b**2-4*a*c
 
-        if a == 0 and delta >= 0 and b != 0:
-            result = -c/b
-            return (result,)
+        if a == 0 or delta < 0:
+            if b != 0 and delta >= 0:
+                result = -c/b
+                return (result,)
+
+            else:
+                return ()
         
-        if delta > 0:
+        elif delta > 0:
             result1 = (-b + delta**(1/2))/(2*a)
             result2 = (-b - delta**(1/2))/(2*a)
             answer = (result1, result2)
             return answer
         
         elif (delta == 0):
-            result = (-b + delta**(1/2))/(2*a)
+            result = (-b)/(2*a)
             answer = result,
             return answer
-        
-        else:
-            return ()
 
     except:
         print("An error has occured")
@@ -80,6 +81,6 @@ def integrate(function, lower, upper):
     return s * h
 
 if __name__ == '__main__':
-    print(fact(-4))
-    print(roots(1, 4, 4))
-    print(integrate('x ** 2 - 1', -1, 1))
+    #print(fact(-4))
+    print(roots(0, 0, 4))
+    #print(integrate('x ** 2 - 1', -1, 1))
